@@ -35,7 +35,7 @@ Para poner en marcha el proyecto en tu máquina, sigue estos sencillos pasos:
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone [https://github.com/isinaveira/pathfinder-algorithms-visualizer.git](https://github.com/isinaveira/pathfinder-algorithms-visualizer.git)
+    git clone https://github.com/isinaveira/pathfinder-algorithms-visualizer.git
     cd pathfinder-algorithms-visualizer
     ```
     
