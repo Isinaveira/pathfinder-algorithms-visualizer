@@ -114,7 +114,7 @@ A\* es una extensión del algoritmo de Dijkstra, considerado uno de los algoritm
 1.  **Define Inicio y Meta:** Selecciona el "Modo de Dibujo" `Punto de Inicio` y haz clic en una celda, luego haz lo mismo con `Punto de Meta`.
 2.  **Dibuja el Entorno:** Utiliza los modos `Muro` para bloquear caminos o `Terreno Costoso (Peso)` para añadir zonas de alto coste (recuerda que el Terreno Costoso solo afecta a Dijkstra y A\*). Usa `Borrar` para limpiar celdas.
 3.  **Elige tu Algoritmo:** Selecciona entre BFS, DFS, Dijkstra o A\* en el menú desplegable.
-4.  **¡Visualiza!** Haz clic en "Ejecutar [Nombre del Algoritmo]" para ver el proceso en acción. Observa los nodos visitados y el camino final.
+4.  **¡Visualiza!** Haz clic en "Ejecutar Algoritmo" para ver el proceso en acción. Observa los nodos visitados y el camino final.
 5.  **Revisa las Estadísticas:** Debajo de la cuadrícula, se mostrará la longitud del camino (número de casillas) y el costo total del viaje.
 6.  **Gestiona la Cuadrícula:**
     * **Reiniciar Cuadrícula:** Vuelve al estado inicial, eliminando todo.
