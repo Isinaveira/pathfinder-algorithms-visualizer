@@ -35,10 +35,10 @@ Para poner en marcha el proyecto en tu máquina, sigue estos sencillos pasos:
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone [https://github.com/tu-usuario/nombre-del-repositorio.git](https://github.com/tu-usuario/nombre-del-repositorio.git)
-    cd nombre-del-repositorio
+    git clone [https://github.com/isinaveira/pathfinder-algorithms-visualizer.git](https://github.com/isinaveira/pathfinder-algorithms-visualizer.git)
+    cd pathfinder-algorithms-visualizer
     ```
-    (Reemplaza `<URL_DEL_REPOSITORIO>` con la URL real de tu repositorio si es público).
+    
 
 2.  **Instala las dependencias:**
     ```bash
