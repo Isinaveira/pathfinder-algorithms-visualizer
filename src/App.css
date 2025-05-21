@@ -1,0 +1,216 @@
+
+
+
+/* src/App.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; /* Fondo suave */
+    color: #333; /* Color de texto principal */
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho de la aplicación en pantallas grandes */
+}
+
+h1 {
+    color: #2c3e50; /* Tono oscuro para el título */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.controls-main {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px; /* Espacio entre los elementos de control */
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilos para los botones */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007bff; /* Azul primario */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+button:disabled {
+    background-color: #cccccc; /* Gris para botones deshabilitados */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Estilos para las etiquetas */
+label {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Estilos para el selector desplegable */
+select {
+    padding: 9px 12px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fdfdfd;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Sombra de enfoque */
+}
+
+/* Contenedor general para el visualizador (controles y grid) */
+.pathfinding-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio entre los controles y la cuadrícula */
+}
+
+/* Contenedor de la cuadrícula */
+#grid-container {
+    display: grid;
+    border: 2px solid #a0a0a0; /* Borde más pronunciado para el grid */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más grande */
+    background-color: #ffffff;
+    /* grid-template-columns y grid-template-rows se establecen dinámicamente en Grid.tsx */
+}
+
+/* Estilos para cada celda/nodo */
+.node {
+    width: 20px; /* Tamaño de cada celda */
+    height: 20px; /* Tamaño de cada celda */
+    border: 1px solid #e0e0e0; /* Borde sutil para las celdas */
+    box-sizing: border-box; /* Incluye el padding y border en el ancho/alto */
+    background-color: #f7f7f7;
+    transition: background-color 0.1s ease-out, transform 0.1s ease;
+}
+
+.node.weight {
+    background-color: #795548; /* Marrón oscuro, por ejemplo */
+    /* Puedes añadir un border o sombra para que resalte más */
+}
+
+.node:hover {
+    background-color: #e0e0e0; /* Pequeño cambio de color al pasar el mouse */
+}
+
+/* Clases para los diferentes estados de los nodos */
+.start {
+    background-color: #4CAF50; /* Verde vibrante para el inicio */
+    border-color: #388E3C;
+}
+
+.target {
+    background-color: #F44336; /* Rojo vibrante para el destino */
+    border-color: #D32F2F;
+}
+
+.wall {
+    background-color: #424242; /* Gris oscuro para los muros */
+    border-color: #212121;
+}
+
+.visited {
+    background-color: #81D4FA; /* Azul claro para nodos visitados (animación BFS) */
+    animation: visitedAnimation 0.4s forwards; /* Animación de 0.4s */
+    border-color: #29B6F6;
+}
+
+.path {
+    background-color: #FFC107; /* Amarillo dorado para el camino final */
+    animation: pathAnimation 0.8s forwards; /* Animación de 0.8s */
+    border-color: #FFA000;
+}
+
+.path-info {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    color: #333;
+}
+
+.path-info p {
+    margin: 5px 0;
+}
+
+.path-info strong {
+    color: #007bff; /* Un color que destaque, puedes elegir otro */
+}
+
+
+
+/* Keyframes para la animación de nodos visitados */
+@keyframes visitedAnimation {
+    0% {
+        transform: scale(0.6);
+        background-color: rgba(129, 212, 250, 0.3); /* Empieza semitransparente */
+        border-radius: 100%; /* Empieza redondo */
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: rgba(129, 212, 250, 0.8);
+        border-radius: 50%;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #81D4FA; /* Termina opaco */
+        border-radius: 0%; /* Termina cuadrado */
+    }
+}
+
+/* Keyframes para la animación del camino final */
+@keyframes pathAnimation {
+    0% {
+        transform: scale(0.5);
+        background-color: rgba(255, 193, 7, 0.3);
+        border-radius: 100%;
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: rgba(255, 193, 7, 0.8);
+        border-radius: 50%;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #FFC107;
+        border-radius: 0%;
+    }
+}
