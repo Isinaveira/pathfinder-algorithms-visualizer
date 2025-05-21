@@ -68,8 +68,7 @@ BFS explora el grafo por "niveles", visitando todos los nodos a una distancia `N
 * **Comportamiento Visual:** Observarás una expansión de "ondas" desde el nodo de inicio que se propaga uniformemente en todas direcciones.
 * **Nota Importante:** Este algoritmo **ignora** el "Terreno Costoso (Peso)". Cada paso cuenta como `1`.
 
-**[IMAGEN o GIF: BFS explorando y mostrando el camino más corto en pasos]**
-(Inserta aquí un GIF o imagen que muestre el comportamiento de BFS. Asegúrate de que el patrón de onda sea claro.)
+
 
 ---
 
@@ -80,8 +79,7 @@ DFS prioriza la exploración de una "rama" o dirección lo más profundamente po
 * **Comportamiento Visual:** El algoritmo se "sumerge" por un camino hasta que no puede avanzar más, luego retrocede para probar otras rutas. El camino encontrado puede parecer "serpenteante".
 * **Nota Importante:** Al igual que BFS, este algoritmo también **ignora** el "Terreno Costoso (Peso)".
 
-**[IMAGEN o GIF: DFS mostrando su exploración profunda y un posible camino no óptimo/serpenteante]**
-(Inserta aquí un GIF o imagen de DFS en acción. Destaca su comportamiento de "inmersión" y cómo el camino final puede no ser el más directo.)
+
 
 ---
 
@@ -92,8 +90,7 @@ Dijkstra es un algoritmo fundamental para encontrar el **camino de menor costo**
 * **Comportamiento Visual:** La visualización también mostrará una "onda" expansiva. Sin embargo, esta onda se propagará más lentamente a través de los nodos que tienen un "peso" (costo) más alto, reflejando su búsqueda del camino más barato.
 * **Clave:** Este algoritmo **considera** el "Terreno Costoso (Peso)", lo que le permite encontrar rutas óptimas que evitan o minimizan el paso por zonas de alto costo.
 
-**[IMAGEN o GIF: Dijkstra explorando con pesos, mostrando cómo la expansión es afectada por las zonas de costo]**
-(Inserta aquí un GIF o imagen de Dijkstra. Muestra cómo la "onda" se desvía o avanza más lento por las zonas de peso.)
+
 
 ---
 
@@ -104,8 +101,7 @@ A\* es una extensión del algoritmo de Dijkstra, considerado uno de los algoritm
 * **Comportamiento Visual:** La exploración de A\* es notablemente más "dirigida" hacia el objetivo. Verás cómo el algoritmo prioriza las direcciones que, según su estimación, lo acercan más a la meta, visitando significativamente menos nodos que Dijkstra para encontrar el mismo camino óptimo.
 * **Clave:** También **considera** el "Terreno Costoso (Peso)" y su eficiencia lo hace ideal para cuadrículas grandes y complejas.
 
-**[IMAGEN o GIF: A* explorando de forma dirigida, con menos nodos visitados que Dijkstra en un escenario similar con pesos]**
-(Inserta aquí un GIF o imagen de A\*. La diferencia clave con Dijkstra es que A\* debe mostrar una búsqueda más enfocada hacia el objetivo.)
+
 
 ---
 
